@@ -36,6 +36,7 @@
     "filter": 1,
     "remove_html_tag": 1,
     "since_date": 1,
+    "query_list": ["肖战","成毅"],
     "start_page": 1,
     "write_mode": [
         "csv",
@@ -44,7 +45,7 @@
     ],
     "original_pic_download": 1,
     "retweet_pic_download": 0,
-    "original_video_download": 1,
+    "original_video_download": 0,
     "retweet_video_download": 0,
     "download_comment": 0,
     "comment_max_download_count": 100,
