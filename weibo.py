@@ -193,7 +193,7 @@ class Weibo(object):
     def is_date(self, since_date):
         """判断日期格式是否正确"""
         try:
-            datetime.strptime(since_date, "%Y-%m-%d")
+            datetime.strptime(since_date, "%Y-%m-%d %H:%M:%S")
             return True
         except ValueError:
             return False
@@ -330,7 +330,7 @@ class Weibo(object):
         """获取用户信息"""
         params = {"containerid": "100505" + str(self.user_config["user_id"])}
         # TODO 这里在读取下一个用户的时候很容易被ban，需要优化休眠时长
-        sleep(random.randint(60, 180))
+        #sleep(random.randint(60, 180))
         js, status_code = self.get_json(params)
         if status_code != 200:
             logger.info("被ban了，需要等待一段时间")
@@ -1091,9 +1091,8 @@ class Weibo(object):
                             if wb["id"] in self.weibo_id_list:
                                 continue
                             created_at = datetime.strptime(wb["created_at"], "%Y-%m-%d")
-                            since_date = datetime.strptime(
-                                self.user_config["since_date"], "%Y-%m-%d"
-                            )
+                            full_create_at = datetime.strptime(wb["full_created_at"], "%Y-%m-%d %H:%M:%S")
+                            since_date = datetime.strptime(self.user_config["since_date"], "%Y-%m-%d %H:%M:%S")
                             if const.MODE == "append":
                                 # append模式下不会对置顶微博做任何处理
 
@@ -1139,7 +1138,7 @@ class Weibo(object):
                                     convert_to_days_ago(self.last_weibo_date, 1),
                                     "%Y-%m-%d",
                                 )
-                            if created_at < since_date:
+                            if full_create_at < since_date:
                                 if self.is_pinned_weibo(w):
                                     continue
                                 # 如果要检查还没有检查cookie，不能直接跳出
@@ -1265,18 +1264,19 @@ class Weibo(object):
         result_headers = [
             "id",
             "bid",
-            "正文",
-            "头条文章url",
-            "原始图片url",
-            "视频url",
-            "位置",
-            "日期",
-            "工具",
-            "点赞数",
-            "评论数",
-            "转发数",
-            "话题",
-            "@用户",
+            "text",
+            "artical url",
+            "orical url",
+            "image url",
+            "location",
+            "datetime",
+            "tools",
+            "likes",
+            "comment_cout",
+            "retweet_cout",
+            "topic",
+            "@user",
+            "creat_at"
         ]
         if not self.filter:
             result_headers2 = ["是否原创", "源用户id", "源用户昵称"]
@@ -1288,6 +1288,7 @@ class Weibo(object):
         """将爬到的信息写入csv文件"""
         write_info = self.get_write_info(wrote_count)
         result_headers = self.get_result_headers()
+        print('result_headers',result_headers)
         result_data = [w.values() for w in write_info]
         file_path = self.get_filepath("csv")
         self.csv_helper(result_headers, result_data, file_path)
@@ -1865,8 +1866,8 @@ class Weibo(object):
                 # 本次运行的某用户首次抓取，用于标记最新的微博id
                 self.first_crawler = True
                 const.CHECK_COOKIE["GUESS_PIN"] = True
-            since_date = datetime.strptime(self.user_config["since_date"], "%Y-%m-%d")
-            today = datetime.strptime(str(date.today()), "%Y-%m-%d")
+            since_date = datetime.strptime(self.user_config["since_date"], "%Y-%m-%d %H:%M:%S")
+            today = datetime.now()
             if since_date <= today:
                 page_count = self.get_page_count()
                 wrote_count = 0

@@ -35,13 +35,11 @@
     ],
     "filter": 1,
     "remove_html_tag": 1,
-    "since_date": 1,
-    "query_list": ["肖战","成毅"],
+    "since_date": "2023-03-17 09:00:00",
+    "query_list": [],
     "start_page": 1,
     "write_mode": [
-        "csv",
-        "sqlite"
-
+        "csv"
     ],
     "original_pic_download": 1,
     "retweet_pic_download": 0,
@@ -52,7 +50,7 @@
     "download_repost": 0,
     "repost_max_download_count": 100,
     "result_dir_name": 0,
-    "cookie": "__bid_n=186595a8a58e2d6d9b4207; ALF=1681281567; _T_WM=89511757638; MLOGIN=0; BAIDU_SSP_lcr=https://login.sina.com.cn/; FPTOKEN=/7TyjIJkcX1FrzDBJr8ypCcgJfLtBUSXrEiU9vMnGayzmzn5Iegrz5ww0dAN+llilqPJDWVXnHvyR6LIXHGeqRAtUoKtb/cDe9GQu1YYuXUJbSjnz/YptbGDn3jl85qjfKaTpZIUjYXjVI02r/PiypKp8bKCjpeWoG5t20GJcgA6QzHh7YT2kNyJk+ALKzZRHBTVXjePw0fMQOiT2lbPdtuqHDVjeVy+4dngnmtGnrlZEqIMFgzaHXLlEsizOfiSB8t9etBCmh86avsRHK2jUzF5X26alBCmHplS3Uwe9HOsGuD4IwEBESPtL6CuKTxXxbj0oj6GNTc85XLsM9Kul9mh0lEAQTOlFVg6JYungQr6jm8Ccn3wtn/NA/tFbAjCU0djYNTtVKrXkqq2BJz8UQ==|rtKr3rdUvDNFZ6DqTq5SWRMNipjXcTyx5x7AhgLDVV8=|10|6a2fa12d3689475d67935bddf1a0ce90; M_WEIBOCN_PARAMS=luicode%3D10000011%26lfid%3D102803; SCF=AlUPPQZfDWIXaRYruNYJSwIFxRaRn6K-hEhvsvCEp2j940KPmgobeXwrhuvB-V5cIF9Lc9sZ3EwCO_XAiyOkjoc.; SUB=_2A25JCreEDeThGedN7VcU9CvNyTuIHXVq9NnMrDV6PUJbktANLXWtkW1NWgECmZjLKsUNaMJRDw62xo7aL_DcdUMs; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9WF.28qRz85k7xmXdZKNEPnK5NHD95Qpe0qfSKBfeKzNWs4Dqcj.i--NiK.0i-zci--fi-82iK.7i--Xi-zRi-2Xi--Xi-zRi-8W; SSOLoginState=1678690260",
+    "cookie": "__bid_n=186595a8a58e2d6d9b4207; BAIDU_SSP_lcr=https://login.sina.com.cn/; WEIBOCN_FROM=1110006030; FPTOKEN=Ono7EunsCMtvroIu5q+HIxbFOuIlfP2OSnpqII5XYNzpGPwcqAuvF/IeC4YUzx+3keWfzObzjgbx2ArLsiuSHaCodxzYibQifoqkmhtpAyJlJr8GHHjb9Ae1E2Pzr1ye6+YHr8jrFrEw08tFmmaDMLMO8xJEfCmv/xyCH5+ymCsgetxmouGPxqU0T0lssbXKQZPexDtFb0TIHj11QickQhyZBr5jhu6FdAxihOZwSueyl1oK0VdMQ1ex1AYNR/l7E/VixFJ+wTevP9Jk8896oi41AHx0cXE0GTBGc0ShjdFdJXVD91Z0P9GNP51TWwY6+tVQayk7V0j/H94Gs1BysVoOP8HFPc6a3cgps0eKND1kCyJyl+3XDYojxt1OBVmr7Tz8F3Ftvr6ROlgrGVz67g==|9CxquJAbtoNy4cy77gAYPGXJBjfMDkUiG3P+tZ93YGg=|10|0b7f8d42718fac4ef7586fa4fdb9b914; ALF=1681611968; SCF=AlUPPQZfDWIXaRYruNYJSwIFxRaRn6K-hEhvsvCEp2j9RS8MAovONGgxuA8di7dTT_aP3F2sWCjGHhp-yski0VA.; SUB=_2A25JF6BIDeRhGeBO6VIS9SnKyz-IHXVq-8AArDV6PUJbktANLULnkW1NSjjGpWcTIDRMA1S3bYLc0ULYOZawXRxR; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9WF3WNoJaeZHHWcEM3oTkv5u5NHD95Qcehz7e0-NSo50Ws4Dqcj_i--fiKyFi-isi--fi-isiK.Ri--fi-isiK.Ri--fi-zNiKL2i--ci-z7i-zX; SSOLoginState=1679020056; _T_WM=94848390001; MLOGIN=1; M_WEIBOCN_PARAMS=luicode%3D20000174%26uicode%3D10000011%26fid%3D231051_-_followers_-_3304314095",
     "mysql_config": {
         "host": "localhost",
         "port": 3306,
